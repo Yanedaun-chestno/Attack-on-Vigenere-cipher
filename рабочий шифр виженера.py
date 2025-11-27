@@ -1,18 +1,20 @@
 # НАЧНЕМ С ШИФРА ВИЖЕНЕРА, ТАК НАЗЫВАЕМОГО ШИФРОВАНИЯ ПРОИЗВОЛЬНОГО ТЕКСТА.
 
-from string import *
 
-import sys
+#from string import *
+
+#import sys
 # print(printable[10:][:26])
 
 # ДЛЯ ОРИГИНАЛЬНОСТИ:
 #alpmal = (printable[10:][:26])
 #alpzag = (printable[36:][:26])
 
-kod = 'кодовое слово'
+#КРИПТОАНАЛИЗОМ Я ЗАЙМУСЬ САМ, ЭТО КОД ЧАСТИЧНО НАПИСАН ПО ГАЙДАМ, ВСЕ ЗНАЮ КАК ЧТО РАБОТАЕТ. ПОКА ЧТО НЕТ
+kod = input("Введите кодовое слово:")
 
 #from itertools import cycle    мб не пригодится
-text = input()
+text = input("Введите текст:")
 
 def shifr (text, kod):
     zakod_text = " "

@@ -1,3 +1,4 @@
+#include "myFunctions.h"
 #include <iostream>
 #include <string>
 #include <algorithm>
@@ -51,9 +52,7 @@ int FindBestShift(std::string& part) {
 }
 
 
-std::vector<std::string> PossibleKeywords() {
-    //input
-    std::string encryptedText;
+std::vector<std::string> PossibleKeywords(std::string& encryptedText) {
     getline(std::cin, encryptedText);
     std::transform(encryptedText.begin(), encryptedText.end(), encryptedText.begin(), ::tolower);
 
@@ -64,7 +63,7 @@ std::vector<std::string> PossibleKeywords() {
     std::cout << textNoSpaces << std::endl;
     std::cout << textLen << std::endl;
 
-    std::vector<int> possibleKeys = { 2, 4, 8, 16 };
+    std::vector<int> possibleKeys = kasiskiExamination(encryptedText);
     std::vector<std::string> keywords;
     for (int key : possibleKeys) {
         std::vector<std::string> caesarList;
@@ -95,7 +94,7 @@ int VigenereDecryption(std::string encryptedText, std::vector<std::string> keywo
         std::string decryptedText;
 
         for (char ch : encryptedText) {
-            if ('a' <= ch <= 'z') {
+            if (ch >= 'a' && ch <= 'z') {
                 int shift = key[index % kLen] - 'a';
                 decryptedText += static_cast<char>(((ch - 'a' - shift + 26) % 26) + 'a');
                 index++;
@@ -108,7 +107,7 @@ int VigenereDecryption(std::string encryptedText, std::vector<std::string> keywo
     }
 
     for (const auto& [key, text] : textVariations) {
-        std::cout << "Possible key: " << key << ", text: " << text << std::endl;
+        std::cout << std::endl << "Possible key: " << key << std::endl << "Text for key: " << text << std::endl;
     }
 
     return 0;

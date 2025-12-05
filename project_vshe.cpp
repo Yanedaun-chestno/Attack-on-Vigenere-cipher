@@ -70,6 +70,5 @@ static std::string vigenereEncrypt() {
 
 //main process
 int main() {
-	std::cout << vigenereEncrypt() << std::endl;
 	return 0;
 }

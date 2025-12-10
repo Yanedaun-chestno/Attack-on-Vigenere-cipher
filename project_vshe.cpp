@@ -63,8 +63,8 @@ static std::string vigenereEncrypt(std::string text, std::string key) {
 
 //main process
 int main() {
-	std::cout << "Notice before usage: the decrypter might not give accurate results because of the nature of Kasiski examination." << std::endl << "(the bigger the text, the better)" << std::endl;
-	std::cout << "What function are you looking for?" << std::endl << "1. Encrypt" << std::endl << "2. Use Kasiski examination on encrypted text" << std::endl << "3. Decrypt text" << std::endl << "Choose choice (1-3): ";
+	std::cout << "Notice before usage:" << std::endl << "1. The decrypter might not give accurate results because of the nature of Kasiski examination." << std::endl << "2. Do NOT use special symbols (\".\", \",\" and etc.)" << std::endl << "3. The bigger the text, the better. Mininum of 250 characters (not counting spaces) is recommended" << std::endl << std::endl;
+	std::cout << "What function are you looking for?" << std::endl << "1. Encrypt" << std::endl << "2. Use Kasiski examination on encrypted text" << std::endl << "3. Decrypt text" << std::endl << "Enter choice (1-3): ";
 	int choice;
 	std::cin >> choice;
 	if (choice == 1) {

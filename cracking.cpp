@@ -4,7 +4,6 @@
 #include <algorithm>
 #include <vector>
 #include <map>
-//Ji fw hz bbj ns tx bvnj cw lam ehumxahv Kuunlwk bwf difdxz wa jbi ebvr ge myxymf Gxy wdbvuf qhh skzcji ij gnbfnwysml ncejorw Hz hb juow tzaf qaeagah n iye gy bfbkvpwl Ibq rs shiwgvda ifw bvrc Ns vbm hb ifiwi Vc zeli sgl pl q mpwxx hb iuc ox mbq Jbi zxifgqwlw tvr gxy xzhcgndx rsmcfnb mlgvsg Gxux xemgu ym lwbz hb jcw s vwbfkgqsmqca Tyzgnbzl ji fw pqguux Xg wqs ge mpwxx Hb ifiwi xsesbefvm hb tlisfim gxyvwl bvr hof Xhz wa jbel ltsrf ij vxihu mbel wzsncm qsr kczu Qlwg es uqpi kactsbyh gyn huym qgkboy simd Fcgg wczw na dnkmi lamfr ym xzx zsffygl Mpog cuowl koyqgmlr wt fe fsfz twsu
 
 const double EN_FREQ[26] = {
 0.08167, 0.01492, 0.02782, 0.04253, 0.12702, 0.02228,
@@ -60,9 +59,6 @@ std::vector<std::string> PossibleKeywords(std::string& encryptedText) {
     textNoSpaces.erase(remove_if(textNoSpaces.begin(), textNoSpaces.end(), std::isspace), textNoSpaces.end());
     int textLen = textNoSpaces.size();
 
-    std::cout << textNoSpaces << std::endl;
-    std::cout << textLen << std::endl;
-
     std::vector<int> possibleKeys = kasiskiExamination(encryptedText);
     std::vector<std::string> keywords;
     for (int key : possibleKeys) {
@@ -78,7 +74,6 @@ std::vector<std::string> PossibleKeywords(std::string& encryptedText) {
         for (std::string text : caesarList) {
             possibleKeyword += ('a' + FindBestShift(text));
         }
-        std::cout << possibleKeyword << std::endl;
         keywords.push_back(possibleKeyword);
     }
 
